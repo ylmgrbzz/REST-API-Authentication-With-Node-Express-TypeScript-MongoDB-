@@ -26,15 +26,10 @@ server.listen(27017, () => {
   console.log("Server is running on port 27017");
 });
 
-const MONGO_URL = "mongodb+srv://ylmgrbz:ylgmrbz@cluster.wjo7mxt.mongodb.net/?retryWrites=true&w=majority";
+const MONGO_URL = "mongodb://localhost:27017/rest";
 
 mongoose.Promise = Promise;
-mongoose.connect(MONGO_URL); 
+mongoose.connect(MONGO_URL);
 mongoose.connection.on("disconnected", () => {
-    console.log("Mongoose disconnected");
-
-    }
-);
-
-
-
+  console.log("Mongoose disconnected");
+});

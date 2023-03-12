@@ -5,7 +5,7 @@ import cookieParser from "cookie-parser";
 import compression from "compression";
 import cors from "cors";
 
-// import router from "./router";
+import router from "./router";
 import mongoose from "mongoose";
 
 const app = express();
@@ -33,3 +33,5 @@ mongoose.connect(MONGO_URL);
 mongoose.connection.on("disconnected", () => {
   console.log("Mongoose disconnected");
 });
+
+app.use("/", router);

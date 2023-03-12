@@ -2,7 +2,7 @@ import crypto from "crypto";
 
 const SECRET = "mysecret";
 
-export const authantication = (salt: string, password: string): string => {
+export const authentication = (salt: string, password: string): string => {
   return crypto
     .createHmac("sha256", [salt, password].join("/"))
     .update(SECRET)
